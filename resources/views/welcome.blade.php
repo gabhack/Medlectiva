@@ -32,8 +32,8 @@
 
                         <!-- Div de la imagen a la derecha -->
                         <div class="right flex-1 p-5">
-                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/5CFC8u8XiXcbSOlVv6JZQx/4e6f898f57f9d798437b3aa22026e30b/CourseraLearners_C_Composition_Hillary_copy__3_.png?auto=format%2Ccompress&amp;dpr=1&amp;w=459&amp;h=497&amp;q=40"
-                                alt="Imagen de una persona estudiando ciberseguridad" class="max-w-full h-full">
+                            <img src="https://postimg.cc/hhmFsWCN" alt="Imagen de una persona estudiando ciberseguridad"
+                                class="max-w-full h-full">
                         </div>
 
                     </div>
