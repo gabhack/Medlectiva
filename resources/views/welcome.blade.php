@@ -32,7 +32,7 @@
 
                         <!-- Div de la imagen a la derecha -->
                         <div class="right flex-1 p-5">
-                            <img src="https://i.postimg.cc/hhmFsWCN/nueva-imagen.jpg" alt="Imagen de un medico"
+                            <img src="https://i.postimg.cc/3JqfrcLD/portada.png" alt="Imagen de un medico"
                                 class="max-w-full h-full">
                         </div>
 
