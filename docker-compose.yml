@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravelapp
+    container_name: laravel_app
+    volumes:
+      - .:/var/www/html
+    environment:   # Configurar variables de entorno del contenedor desde el archivo .env
+      DB_CONNECTION: mysql
+      DB_HOST: medlectivadb.cto5xfeul8ab.us-east-2.rds.amazonaws.com
+      DB_PORT: 3306
+      DB_DATABASE: medlectivadb
+      DB_USERNAME: admin
+      DB_PASSWORD: Gabo2602.
+    networks:
+      - laravel_network
+
+  webserver:
+    image: nginx:alpine
+    container_name: nginx_webserver
+    volumes:
+      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+    networks:
+      - laravel_network
+
+networks:
+  laravel_network:
+    driver: bridge
