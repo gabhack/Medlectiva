@@ -18,8 +18,11 @@
             @endphp
             <div class="w-1/3 px-4">
                 <div class="bg-white shadow-md rounded p-5 mb-4">
-                    <img src="" alt="Foto del Especialista" class="mb-4 w-full rounded">
-                    <h2 class="text-xl font-bold mb-2">{{ $especialista->name }}</h2>
+                    <div class="mt-2" x-show="! photoPreview">
+                        <img src="{{ $especialista->profile_photo_url }}" alt="{{ $especialista->name }}"
+                            class="h-120 w-60 object-cover">
+                    </div>
+                    <h2 class="mt-10 text-xl font-bold mb-2">{{ $especialista->name }}</h2>
                     <p class="text-gray-700">{{ $program->descripcion }}</p>
                 </div>
                 @if ($program->requiere_carta)
@@ -33,9 +36,10 @@
                     </div>
                 @endif
 
-                <div class="mb-2">
+                <div class="mb-4 flex items-center">
                     <a href="{{ route('programs.authIndex') }}"
-                        class="text-blue-500 text-sm font-bold py-2 px-4 rounded hover:text-blue-700 focus:outline-none focus:shadow-outline">
+                        class="text-blue-500 text-sm font-bold py-2 
+                        rounded hover:text-blue-700 focus:outline-none focus:shadow-outline">
                         Volver al listado
                     </a>
                 </div>

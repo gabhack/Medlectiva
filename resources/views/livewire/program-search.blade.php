@@ -4,7 +4,7 @@
             class="w-full h-12 px-5 pr-10 rounded-full text-sm bg-gray-200 focus:outline-none focus:bg-white focus:shadow-outline">
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 mt-12 mb-10">
         @forelse($programs as $program)
             <livewire:program-card :program="$program" :key="$program->id" />
         @empty
