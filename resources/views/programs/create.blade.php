@@ -201,7 +201,7 @@
                 <p></p>
                 <p></p>
                 <div class="flex items-center justify-between">
-                    <a href="{{ route('programs.index') }}"
+                    <a href="{{ route('programs.authIndex') }}"
                         class="text-gray-500 text-sm font-bold py-2 px-4 rounded hover:text-gray-700 focus:outline-none focus:shadow-outline">
                         Volver al listado
                     </a>

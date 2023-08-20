@@ -23,18 +23,18 @@
                     <p class="text-gray-700">{{ $program->descripcion }}</p>
                 </div>
                 @if ($program->requiere_carta)
-                <div class="mb-4 flex items-center">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="requiere_carta">
-                        Requiere Carta de recomendación:
-                    </label>
-                    <input disabled
-                        class="shadow appearance-none border rounded h-4 w-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2"
-                        id="requiere_carta" name="requiere_carta" type="checkbox" checked>
-                </div>
-            @endif
-            
+                    <div class="mb-4 flex items-center">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="requiere_carta">
+                            Requiere Carta de recomendación:
+                        </label>
+                        <input disabled
+                            class="shadow appearance-none border rounded h-4 w-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2"
+                            id="requiere_carta" name="requiere_carta" type="checkbox" checked>
+                    </div>
+                @endif
+
                 <div class="mb-2">
-                    <a href="{{ route('programs.index') }}"
+                    <a href="{{ route('programs.authIndex') }}"
                         class="text-blue-500 text-sm font-bold py-2 px-4 rounded hover:text-blue-700 focus:outline-none focus:shadow-outline">
                         Volver al listado
                     </a>
@@ -75,7 +75,7 @@
                         <div class="bg-gray-50 shadow-md rounded w-full py-2 px-3 text-gray-700 leading-tight">
                             {{ $program->fecha_fin ?? 'No especificado' }}
                         </div>
-                    </div>                  
+                    </div>
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">
