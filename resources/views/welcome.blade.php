@@ -45,14 +45,8 @@
                 </div>
             </section>
 
-            <!-- Resto de tu contenido... -->
-            <div class="container mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-                    @foreach ($programs as $program)
-                        <livewire:program-card :program="$program" :key="$program->id" />
-                    @endforeach
-                </div>
-            </div>
+            <livewire:program-search />
+
 
             <p class="text-center">
                 <a href="/rotations"
