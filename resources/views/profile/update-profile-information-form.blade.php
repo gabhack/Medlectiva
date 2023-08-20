@@ -22,11 +22,11 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-label for="photo" value="{{ __('Foto') }}" />
+                <x-label for="photo" value="{{ __('Su foto de perfil se mostrará en la oferta de programas') }}" />
 
                 <div class="mt-2" x-show="! photoPreview">
                     <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}"
-                        class="rounded-full h-300 w-150 object-cover">
+                        class="h-120 w-60 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
