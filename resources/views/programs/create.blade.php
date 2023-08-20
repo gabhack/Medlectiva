@@ -45,17 +45,25 @@
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_inicio">
-                        Fecha de inicio:
+                        Fecha de en la que puede empezar a recibir solicitudes:
                     </label>
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="fecha_inicio" name="fecha_inicio" type="date" required>
                 </div>
 
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_fin">
+                        Cuando dejará de recibir solicitudes:
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="fecha_fin" name="fecha_fin" type="date" required>
+                </div>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="duracion">
-                        Tiempo de Duración:
+                        Tiempo de Duración del programa:
                     </label>
                     <div class="flex gap-4">
                         <div class="w-1/2">
@@ -78,14 +86,7 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_fin">
-                        Fecha de finalización:
-                    </label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="fecha_fin" name="fecha_fin" type="date" required>
-                </div>
+
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">
@@ -224,10 +225,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var fechaInicio = document.querySelector('#fecha_inicio');
-        var duracion = document.querySelector('#duracion');
-        var duracionUnidad = document.querySelector('#duracion_unidad');
-        var fechaFin = document.querySelector('#fecha_fin');
+        /* var fechaInicio = document.querySelector('#fecha_inicio');
+         var duracion = document.querySelector('#duracion');
+         var duracionUnidad = document.querySelector('#duracion_unidad');
+         var fechaFin = document.querySelector('#fecha_fin');*/
 
         // Esta función calcula la fecha de finalización
         var calcularFechaFin = function() {
@@ -254,11 +255,11 @@
         }
 
         // Escuchar los cambios en los campos relevantes
-        fechaInicio.addEventListener('change', calcularFechaFin);
-        duracion.addEventListener('change', calcularFechaFin);
-        duracionUnidad.addEventListener('change', calcularFechaFin);
+        /* fechaInicio.addEventListener('change', calcularFechaFin);
+         duracion.addEventListener('change', calcularFechaFin);
+         duracionUnidad.addEventListener('change', calcularFechaFin);
 
-        // Marcar la fecha de finalización como solo lectura
-        fechaFin.setAttribute('readonly', true);
+         // Marcar la fecha de finalización como solo lectura
+         fechaFin.setAttribute('readonly', true);*/
     });
 </script>

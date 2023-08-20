@@ -63,7 +63,7 @@
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_inicio">
-                        Fecha de inicio:
+                        Fecha en la que empieza a recibir solicitudes:
                     </label>
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -71,6 +71,14 @@
                         required>
                 </div>
 
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_fin">
+                        Fecha tope para culminar el programa:
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="fecha_fin" name="fecha_fin" type="date" value="{{ $program->fecha_fin }}" required>
+                </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="duracion">
                         Tiempo de Duración:
@@ -97,14 +105,7 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha_fin">
-                        Fecha de finalización:
-                    </label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="fecha_fin" name="fecha_fin" type="date" value="{{ $program->fecha_fin }}" required>
-                </div>
+
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">
@@ -118,7 +119,7 @@
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="especialidad_id">
-                        ID de la Especialidad:
+                        Especialidad:
                     </label>
                     <select
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -135,7 +136,7 @@
 
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="hospital_id">
-                        ID del Hospital:
+                        IPS:
                     </label>
                     <select
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -248,20 +249,7 @@
                     </select>
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="especialistas_adicionales">
-                        Especialistas Adicionales:
-                    </label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="especialistas_adicionales" name="especialistas_adicionales" list="especialistas"
-                        placeholder="Elija  especialista adicional">
-                    <datalist id="especialistas">
-                        @foreach ($especialistas as $especialista)
-                            <option value="{{ $especialista->id }}">{{ $especialista->name }}</option>
-                        @endforeach
-                    </datalist>
-                </div>
+
 
                 <div class="mb-4 flex items-center">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="requiere_carta">
@@ -294,11 +282,11 @@
 
 
 
-        var fechaInicio = document.querySelector('#fecha_inicio');
+        /*var fechaInicio = document.querySelector('#fecha_inicio');
         var duracion = document.querySelector('#duracion');
         var duracionUnidad = document.querySelector('#duracion_unidad');
         var fechaFin = document.querySelector('#fecha_fin');
-
+*/
 
         var calcularDias = function() {
             if (fechaInicio && fechaFin) {
@@ -333,17 +321,17 @@
             }
         }
 
-        // Escuchar los cambios en los campos relevantes
-        if (fechaInicio && fechaFin) {
-            fechaInicio.addEventListener('change', calcularDias);
+        /* // Escuchar los cambios en los campos relevantes
+         if (fechaInicio && fechaFin) {
+             fechaInicio.addEventListener('change', calcularDias);
 
-        } else {
-            fechaInicio.addEventListener('change', calcularFechaFin);
-        }
-        duracion.addEventListener('change', calcularFechaFin);
-        duracionUnidad.addEventListener('change', calcularFechaFin);
+         } else {
+             fechaInicio.addEventListener('change', calcularFechaFin);
+         }
+         duracion.addEventListener('change', calcularFechaFin);
+         duracionUnidad.addEventListener('change', calcularFechaFin);
 
-        // Marcar la fecha de finalización como solo lectura
-        fechaFin.setAttribute('readonly', true);
+         // Marcar la fecha de finalización como solo lectura
+         fechaFin.setAttribute('readonly', true);*/
     });
 </script>

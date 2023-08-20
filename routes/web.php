@@ -42,16 +42,16 @@ Route::get('/rotations', function () {
 Route::get('/register', [InvitationRegisterController::class, 'showRegistrationForm'])->name('register');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
+    //Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
     Route::get('/programs/create', [ProgramController::class, 'create'])->name('programs.create');
     Route::post('/programs', [ProgramController::class, 'store'])->name('programs.store');
     Route::get('/programs/authIndex', [ProgramController::class, 'authIndex'])->name('programs.authIndex');
+    Route::get('/programs', [ProgramController::class, 'authIndex'])->name('programs.authIndex');
     Route::get('/programs/enrolled', [ProgramController::class, 'showEnrolledPrograms'])->name('programs.enrolled');
     Route::get('/programs/{program}/editRespaldo', [ProgramController::class, 'editRespaldo'])->name('programs.editRespaldo');
     Route::get('/programs/edit', [ProgramController::class, 'edit'])->name('programs.edit');
     Route::get('programs/{program}/enroll-form', [ProgramController::class, 'showEnrollForm'])->name('programs.showEnrollForm');
     Route::put('/programs/{program}', [ProgramController::class, 'update'])->name('programs.update');
-    Route::get('/programs/{program}', [ProgramController::class, 'show'])->name('programs.show');
     Route::delete('/programs/{program}', [ProgramController::class, 'destroy'])->name('programs.destroy');
     Route::post('/programs/{program}/enroll', [ProgramController::class, 'enroll'])->name('programs.enroll');
     Route::get('/hospitals/invite', [SpecialistInvitationController::class, 'create'])->name('hospitals.invite');
@@ -62,3 +62,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/programs/{program}/enroll', [ProgramController::class, 'enroll'])->name('programs.enroll');
 
 });
+Route::get('/programs/{program}', [ProgramController::class, 'show'])->name('programs.show');

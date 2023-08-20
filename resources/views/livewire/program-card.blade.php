@@ -12,23 +12,24 @@
     </p>
     <p class="card-text mb-3 text-sm text-gray-600"><strong>Hospital:</strong>
         {{ $program->hospital->nombre ?? 'Desconocido' }}</p>
-    <p class="card-text mb-3 text-sm text-gray-600"><strong>Inicio:</strong>
+    <p class="card-text mb-3 text-sm text-gray-600"><strong>Comineza a recibir estudiantes:</strong>
         {{ $program->fecha_inicio ?? 'Desconocido' }}</p>
-    <p class="card-text mb-3 text-sm text-gray-600"><strong>Fin:</strong> {{ $program->fecha_fin ?? 'Desconocido' }}</p>
-
-    <!-- Botón 'Más información' -->
-    <a href="/rotations/{{ $program->id ?? '#' }}"
+    <p class="card-text mb-3 text-sm text-gray-600"><strong>Fecha tope de culminación del programa:</strong> {{ $program->fecha_fin ?? 'Desconocido' }}</p>
+    <a href="{{ route('programs.show', $program->id ?? '#') }}"
         class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
         Más información
     </a>
+
     @php
         $allowedRoles = ['Estudiante', 'Médico', 'Residente', 'Fellow'];
     @endphp
 
-@if (auth()->user() && auth()->user()->hasAnyRole($allowedRoles))
-<a href="{{ route('programs.showEnrollForm', $program->id ?? '#') }}" class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 ml-4">
-    Inscribirse
-</a>
-@endif
+    @if (auth()->user() &&
+            auth()->user()->hasAnyRole($allowedRoles))
+        <a href="{{ route('programs.showEnrollForm', $program->id ?? '#') }}"
+            class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 ml-4">
+            Inscribirse
+        </a>
+    @endif
 
 </div>

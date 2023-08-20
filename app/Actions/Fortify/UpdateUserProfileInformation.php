@@ -19,7 +19,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-
             'email' => [
                 'required',
                 'string',
@@ -27,7 +26,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+            'photo' => ['nullable', 'image', 'max:2048'],
         ])->validateWithBag('updateProfileInformation');
+
+        // Manejo de la foto de perfil
+        if (isset($input['photo'])) {
+            $user->updateProfilePhoto($input['photo']);
+        }
 
         if (
             $input['email'] !== $user->email &&
@@ -41,6 +46,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ])->save();
         }
     }
+
+
 
     /**
      * Update the given verified user's profile information.
