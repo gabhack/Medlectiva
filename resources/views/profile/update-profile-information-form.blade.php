@@ -24,11 +24,9 @@
 
                 <x-label for="photo" value="{{ __('Foto') }}" />
 
-                <!-- Current Profile Photo -->
-                {{ $this->user->profile_photo_url }}
                 <div class="mt-2" x-show="! photoPreview">
                     <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}"
-                        class="rounded-full h-20 w-20 object-cover">
+                        class="rounded-full h-300 w-150 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
