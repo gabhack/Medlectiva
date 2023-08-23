@@ -7,7 +7,7 @@
     <!-- Columna de imagen y nombre -->
     <div class="relative mb-4 md:mb-0 mr-0 md:mr-4 flex-shrink-0 w-full md:w-60 h-48 md:h-full">
         <img src="{{ $especialista->profile_photo_url }}" alt="{{ $especialista->name }}"
-            class="h-48 md:h-120 w-full md:w-60 object-cover rounded">
+            class="w-[200px] h-[200px] object-cover rounded">
         <div class="absolute bottom-0 bg-black bg-opacity-50 px-2 py-1 rounded-t">
             <h2 class="text-white text-xm font-bold">{{ $especialista->name }}</h2>
         </div>
@@ -35,7 +35,7 @@
             </p>
 
             <a href="{{ route('programs.show', $program->id ?? '#') }}"
-               class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
                 Más información
             </a>
 
@@ -46,7 +46,7 @@
             @if (auth()->user() &&
                     auth()->user()->hasAnyRole($allowedRoles))
                 <a href="{{ route('programs.showEnrollForm', $program->id ?? '#') }}"
-                   class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 ml-4">
+                    class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 ml-4">
                     Inscribirse
                 </a>
             @endif
