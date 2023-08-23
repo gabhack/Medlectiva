@@ -12,6 +12,13 @@
 
     <body>
 
+        <!-- Header -->
+
+
+
+
+        <!-- Sección principal de Rotaciones -->
+
 
         <!-- Sección principal de Rotaciones -->
         <h1 class="mt-20 text-center text-4xl font-bold mb-8">Nuestros Programas de Rotación</h1>
