@@ -14,26 +14,18 @@
 
         <main class="py-5">
             <!-- Nuevo diseño del hero banner basado en el ejemplo -->
-            <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="my-10 mx-auto max-w-7xl flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-bold text-gray-800 sm:text-5xl md:text-6xl">
-                            <span class="block xl:inline">Inicia una rotación médica</span>
-                            <span class="block text-blue-500 xl:inline">de excelencia</span>
-                        </h1>
-                        <p class="mt-3 text-lg text-gray-500 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Sumérgete en la experiencia clínica con programas de rotación en hospitales y clínicas
-                            reconocidas a nivel mundial. Aprende de los mejores y construye un sólido cimiento para tu
-                            carrera médica.
-                        </p>
-
-                    </div>
-                    <!-- Imagen a la derecha -->
-                    <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                        <img src="https://i.postimg.cc/3JqfrcLD/portada.png" alt="Imagen de un medico"
-                            class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-                    </div>
-
+            <section class="flex flex-col lg:flex-row items-stretch h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Sección de texto -->
+                <div class="flex flex-col justify-center w-full lg:w-1/2">
+                    <h1 class="text-4xl tracking-tight font-bold text-gray-800 sm:text-5xl md:text-6xl">
+                        <span class="block xl:inline">Inicia una rotación médica</span>
+                        <span class="block text-blue-500 xl:inline">de excelencia</span>
+                    </h1>
+                    <p class="mt-3 text-lg text-gray-500 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Sumérgete en la experiencia clínica con programas de rotación en hospitales y clínicas
+                        reconocidas a nivel mundial. Aprende de los mejores y construye un sólido cimiento para tu
+                        carrera médica.
+                    </p>
                     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div class="rounded-md shadow">
                             <a href="/rotations"
@@ -43,7 +35,13 @@
                         </div>
                     </div>
                 </div>
+                <!-- Sección de imagen -->
+                <div class="flex-shrink-0 w-full lg:w-1/2 h-3/4 bg-cover bg-right"
+                    style="background-image: url('{{ asset('storage/imagenes/portadasinfondo.png') }}');">
+                    <!-- La imagen se establece como fondo para ocupar todo el espacio -->
+                </div>
             </section>
+
 
             <livewire:program-search />
 
