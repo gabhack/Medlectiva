@@ -2,7 +2,7 @@
     use App\Models\User;
     $especialista = User::find($program->especialista_id);
 @endphp
-
+a
 <div class="card p-5 border rounded shadow-lg flex flex-col md:flex-row items-start h-auto md:h-144">
     <!-- Columna de imagen y nombre -->
     <div class="relative mb-4 md:mb-0 mr-0 md:mr-4 flex-shrink-0 w-full md:w-60 h-48 md:h-full">
