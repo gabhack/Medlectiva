@@ -7,7 +7,7 @@
     <!-- Columna de imagen y nombre -->
     <div class="relative mb-4 md:mb-0 mr-0 md:mr-4 flex-shrink-0 w-full md:w-60 h-48 md:h-full">
         <img src="{{ $especialista->profile_photo_url }}" alt="{{ $especialista->name }}"
-            class="w-[200px] h-[200px] object-cover rounded">
+            class="h-48 md:h-120 w-full md:w-60 object-cover rounded">
         <div class="absolute bottom-0 bg-black bg-opacity-50 px-2 py-1 rounded-t">
             <h2 class="text-white text-xm font-bold">{{ $especialista->name }}</h2>
         </div>
