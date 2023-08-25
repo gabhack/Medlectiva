@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+
 <div class="container mx-auto">
     <div class="relative w-1/2 mx-auto">
         <input type="text" wire:model="search" placeholder="Buscar programas de rotación médica..."
