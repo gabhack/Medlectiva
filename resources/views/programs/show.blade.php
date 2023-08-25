@@ -218,8 +218,8 @@
                     Tipo de Rotación:
                 </label>
                 <select
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="tipo_rotacion" name="tipo_rotacion" required readonly>
+                    class="bg-gray-50 shadow-md rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="tipo_rotacion" name="tipo_rotacion" required disabled>
                     @if ($program->tipo_rotacion == 'observer')
                         <option value="observer" selected>Observer</option>
                         <option value="hands_on">Hands on</option>
@@ -229,6 +229,7 @@
                     @endif
                 </select>
             </div>
+
 
 
             <div class="flex items-center justify-between">
@@ -241,7 +242,7 @@
                             Editar este programa
                         </a>
                     @else
-                        <a href="{{ route('programs.enroll', $program->id) }}"
+                        <a href="{{ route('programs.showEnrollForm', $program->id ?? '#') }}"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Quiero inscribirme
                         </a>

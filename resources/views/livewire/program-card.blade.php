@@ -47,7 +47,7 @@
                     auth()->user()->hasAnyRole($allowedRoles))
                 <a href="{{ route('programs.showEnrollForm', $program->id ?? '#') }}"
                     class="inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 ml-4">
-                    Inscribirse
+                    Aplicar
                 </a>
             @endif
         </div>

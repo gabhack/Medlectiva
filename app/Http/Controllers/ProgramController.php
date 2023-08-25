@@ -13,16 +13,23 @@ use Spatie\Permission\Models\Role;
 
 class ProgramController extends Controller
 {
+
+    public function getPrograms()
+    {
+        $programs = Program::inRandomOrder()->limit(20)->get();
+
+        return $programs;
+
+    }
     public function index()
     {
-        $programs = Program::all();
-
-        return view('programs.index', ['programs' => $programs]);
+        $programs = $this->getPrograms();
+        return view('programs.authindex', ['programs' => $programs]);
     }
 
     public function guestIndex()
     {
-        $programs = Program::all();
+        $programs = $this->getPrograms();
 
         return view('programs.guestIndex', ['programs' => $programs]);
     }
@@ -104,7 +111,7 @@ class ProgramController extends Controller
 
             $program->save();
 
-            return redirect()->route('programs.index')->with('success', 'Programa creado exitosamente.');
+            return redirect()->route('programs.authindex')->with('success', 'Programa creado exitosamente.');
         } catch (\Exception $e) {
             Log::error($e);
             return back()->withInput()->withErrors(['general' => 'No se pudo crear el programa. Por favor intente de nuevo.']);
@@ -209,7 +216,7 @@ class ProgramController extends Controller
 
         $program->delete();
 
-        return redirect()->route('programs.index')->with('success', 'Programa eliminado exitosamente.');
+        return redirect()->route('programs.authindex')->with('success', 'Programa eliminado exitosamente.');
     }
 
 
@@ -259,7 +266,7 @@ class ProgramController extends Controller
             // Puedes registrar el error para revisiones futuras
             \Log::error("Error al inscribir al usuario en el programa: {$e->getMessage()}");
 
-            return redirect()->route('programs.index')
+            return redirect()->route('programs.authindex')
                 ->with('error', 'Hubo un problema al intentar inscribirte. Por favor, intenta nuevamente.');
         }
     }
@@ -280,7 +287,7 @@ class ProgramController extends Controller
 
     public function authIndex()
     {
-        $programs = Program::all();
+        $programs = $this->getPrograms();
 
         return view('programs.authIndex', ['programs' => $programs]);
         // Asume que tienes una vista llamada 'programs.authIndex'

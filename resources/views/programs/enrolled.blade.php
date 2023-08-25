@@ -18,27 +18,28 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             @forelse($programs as $program)
                 <div class="card p-5 border rounded shadow-lg">
-                    <img src="https://via.placeholder.com/300x150" alt="Imagen de {{ $program->nombre }}"
+                    <img src="https://via.placeholder.com/300x150" alt="Imagen de {{ $program->nombre ?? 'N/A' }}"
                         class="w-full rounded mb-5">
+                    <h2 class="card-title text-2xl font-bold mb-3">{{ $program->nombre ?? 'N/A' }}</h2>
 
-                    <h2 class="card-title text-2xl font-bold mb-3">{{ $program->nombre }}</h2>
                     <p class="card-text mb-3 text-sm text-gray-600"><strong>Especialidad:</strong>
-                        {{ $program->especialidad->nombre }}</p>
+                        {{ optional($program->especialidad)->nombre ?? 'N/A' }}</p>
                     <p class="card-text mb-3 text-sm text-gray-600"><strong>Hospital:</strong>
-                        {{ $program->hospital->nombre }}</p>
+                        {{ optional($program->hospital)->nombre ?? 'N/A' }}</p>
                     <p class="card-text mb-3 text-sm text-gray-600"><strong>Inicio:</strong>
-                        {{ $program->fecha_inicio }}
+                        {{ $program->fecha_inicio ?? 'N/A' }}
                     </p>
-                    <p class="card-text mb-3 text-sm text-gray-600"><strong>Fin:</strong> {{ $program->fecha_fin }}</p>
+                    <p class="card-text mb-3 text-sm text-gray-600"><strong>Fin:</strong>
+                        {{ $program->fecha_fin ?? 'N/A' }}</p>
 
-                    <a href="/rotations/{{ $program->id }}"
+                    <a href="/programs/{{ $program->id }}"
                         class="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
                         Más información
                     </a>
                 </div>
             @empty
                 <div class="col-span-2 text-center text-gray-600">
-                    No estás inscrito en ningún programa.
+                    Usted no ha aplicado aún a ningún programa de rotación médica.
                 </div>
             @endforelse
         </div>
